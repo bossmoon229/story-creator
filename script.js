@@ -13,8 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
       story.style.display = "block";
       storyBlock.style.display = "block";
       btnText.innerText = "Generate another story";
-      storyImg.style.display = 'block';
-      storyImg.src = '/img/fog-people.jpg';
+      // storyImg.style.display = 'block';
+      // storyImg.src = '/img/fog-people.jpg';
     }
   });
 });
