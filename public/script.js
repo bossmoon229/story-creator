@@ -5,6 +5,23 @@ document.addEventListener("DOMContentLoaded", async () => {
   let btnText = document.getElementById("generate");
   // let storyImg = document.getElementById("img-story");
   const storyImg = document.getElementById("story-img");
+
+  const fileInput = document.getElementById("fileInput");
+  const saveBtn = document.getElementById("save");
+
+  saveBtn.addEventListener("click", () => {
+    fileInput.click();
+  });
+
+  fileInput.addEventListener("change", (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      document.getElementById("story-img").src = url;
+      console.log(file.name);
+    }
+  });
+
   generate.addEventListener("click", async () => {
     const currentDisplay = window.getComputedStyle(story).display;
 
@@ -32,7 +49,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     //   .then((res) => res.json())
     //   .then((images) => {
     //     const randomImage = images[Math.floor(Math.random() * images.length)];
-    //     storyImg.src = `/img/${randomImage}`; 
+    //     storyImg.src = `/img/${randomImage}`;
     //   });
     // console.log(randomImage);
   });
